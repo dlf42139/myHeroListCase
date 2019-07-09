@@ -8,8 +8,10 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
+// 导出
 export default {
   name: 'app',
+  // 注册子组件
   components: {
     HelloWorld
   }
