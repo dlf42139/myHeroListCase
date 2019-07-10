@@ -4,14 +4,8 @@
     <app-header></app-header>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
-        </div>
+        <!-- AppSider -->
+        <app-sider></app-sider>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">Hero List</h2>
           <a class="btn btn-success" href="add.html">Add</a>
@@ -232,6 +226,7 @@
 <script>
 // 导入AppHeader组件
 import AppHeader from './components/AppHeader.vue'
+import AppSider from './components/AppSider.vue'
 
 // 导出
 export default {
@@ -239,6 +234,7 @@ export default {
   // 注册子组件
   components: {
     AppHeader,
+    AppSider,
   }
 }
 </script>
