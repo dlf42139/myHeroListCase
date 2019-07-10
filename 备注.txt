@@ -3,3 +3,5 @@ index.html ——> App.vue（根组件）
 
 components文件夹里面放的是通用的组件
 views文件夹里面放页面页面其实不是页面，，，，template。。自己理解
+
+package.json   开发依赖
