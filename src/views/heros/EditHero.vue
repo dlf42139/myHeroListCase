@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     data() {
         return {
@@ -31,10 +33,22 @@ export default {
             }
         }
     },
+    // 接收外部传递的参数
+    props:['id'],
+    mounted(){
+        this.loadItem();
+    },
     methods: {
+        loadItem(){
+            axios
+            .get('http://localhost:3000/heros/' + this.id)
+            .then( res=>{
+                // 原本formData对象里没有id属性，但是你这么一赋值之后就有了
+                this.formData = res.data;
+            } )
+        },
         editItem(){
-            console.log(this.formData);
-            
+            axios
         }
     },
 }

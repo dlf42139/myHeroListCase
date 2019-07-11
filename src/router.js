@@ -22,7 +22,7 @@ const router = new VueRouter({
     // 这个设置是针对router-link的，所以我之前的那种写法就不行了
     // linkExactActiveClass: 'active',
     // 精确的可以理解为完全匹配，不exact的可以理解为路由地址中有那部分就可以。
-    linkActiveClass:'active',
+    linkActiveClass: 'active',
     // 配置路由规则
     routes: [{
         path: '/',
@@ -39,14 +39,15 @@ const router = new VueRouter({
         name: 'equipment',
         path: '/equipmentlist',
         component: EquipmentList,
-    },{
-        name:'add',
-        path:'/herolist/add',
-        component:AddHero
-    },{
-        name:'edit',
-        path:'/herolist/edit/:id',
-        component:EditHero
+    }, {
+        name: 'add',
+        path: '/herolist/add',
+        component: AddHero
+    }, {
+        name: 'edit',
+        path: '/herolist/edit/:id',
+        component: EditHero,
+        props: true,
     }]
 })
 
