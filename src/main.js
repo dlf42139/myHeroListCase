@@ -22,6 +22,9 @@ import EquipmentList from './views/equipment/EquipmentList.vue'
 
 // 创建路由对象
 const router = new VueRouter({
+  // 精确的配置高亮显示的类样式
+  // 这个设置是针对router-link的，所以我之前的那种写法就不行了
+  linkExactActiveClass:'active',
   // 配置路由规则
   routes: [{
     path: '/',
@@ -38,7 +41,7 @@ const router = new VueRouter({
     name: 'equipment',
     path: '/equipmentlist',
     component: EquipmentList,
-  }]
+  }],
 })
 
 // 把App组件，渲染，挂载到#app（会替换掉网页里的#app），是我们的根组件
