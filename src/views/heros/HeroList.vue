@@ -50,7 +50,7 @@ export default {
   methods: {
     // 初始化加载数据方法
     loadData() {
-      this.axios.get("http://localhost:3000/heros").then(res => {
+      this.axios.get("heros").then(res => {
         const { data, status } = res;
         if (status == 200) {
           this.list = data;
@@ -62,7 +62,7 @@ export default {
       if (confirm("请问您真的要删除吗")) {
         this.axios
           // .delete(`http://localhost:3000/heros/${id}`)
-          .delete("http://localhost:3000/heros/" + id)
+          .delete("heros/" + id)
           .then(res => {
             // console.log(res);
             let status = res.status;

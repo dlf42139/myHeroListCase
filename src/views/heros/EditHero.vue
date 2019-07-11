@@ -41,7 +41,7 @@ export default {
     methods: {
         loadItem(){
             this.axios
-            .get('http://localhost:3000/heros/' + this.id)
+            .get('heros/' + this.id)
             .then( res=>{
                 // 原本formData对象里没有id属性，但是你这么一赋值之后就有了
                 this.formData = res.data;
@@ -49,7 +49,7 @@ export default {
         },
         editItem(){
             this.axios
-            .put('http://localhost:3000/heros/' + this.id , this.formData)
+            .put('heros/' + this.id , this.formData)
             .then(res=>{
                 console.log(res);
                 this.$router.push('/herolist')

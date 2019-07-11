@@ -37,7 +37,7 @@ export default {
     addItem(){
       // console.log(this.formData);
       this.axios
-      .post('http://localhost:3000/heros',this.formData)
+      .post('heros',this.formData)
       .then( res=>{
         // console.log(res);
         let status = res.status;
