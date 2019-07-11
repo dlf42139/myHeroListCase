@@ -12,26 +12,26 @@ import EquipmentList from './views/equipment/EquipmentList.vue'
 
 // 创建路由对象
 const router = new VueRouter({
-  // 精确的配置高亮显示的类样式
-  // 这个设置是针对router-link的，所以我之前的那种写法就不行了
-  linkExactActiveClass: 'active',
-  // 配置路由规则
-  routes: [{
-    path: '/',
-    redirect: '/herolist'
-  }, {
-    name: 'herolist',
-    path: '/herolist',
-    component: HeroList,
-  }, {
-    name: 'weapon',
-    path: '/weaponlist',
-    component: WeaponList
-  }, {
-    name: 'equipment',
-    path: '/equipmentlist',
-    component: EquipmentList,
-  }],
+    // 精确的配置高亮显示的类样式
+    // 这个设置是针对router-link的，所以我之前的那种写法就不行了
+    linkExactActiveClass: 'active',
+    // 配置路由规则
+    routes: [{
+        path: '/',
+        redirect: '/herolist'
+    }, {
+        name: 'herolist',
+        path: '/herolist',
+        component: HeroList,
+    }, {
+        name: 'weapon',
+        path: '/weaponlist',
+        component: WeaponList
+    }, {
+        name: 'equipment',
+        path: '/equipmentlist',
+        component: EquipmentList,
+    }],
 })
 
 export default router
