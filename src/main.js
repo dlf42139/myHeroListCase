@@ -15,23 +15,30 @@ import VueRouter from 'vue-router'
 // 配置vue的插件vue-router
 Vue.use(VueRouter);
 
-// 导入英雄列表组件
+// 导入各种列表组件
 import HeroList from './views/heros/HeroList.vue'
+import WeaponList from './views/weapons/WeaponList.vue'
+import EquipmentList from './views/equipment/EquipmentList.vue'
 
 // 创建路由对象
 const router = new VueRouter({
   // 配置路由规则
-  routes: [
-    {
-      path:'/',
-      redirect:'/herolist'
-    },
-    {
-      name:'herolist',
-      path:'/herolist',
-      component:HeroList,
-    }
-  ]
+  routes: [{
+    path: '/',
+    redirect: '/herolist'
+  }, {
+    name: 'herolist',
+    path: '/herolist',
+    component: HeroList,
+  }, {
+    name: 'weapon',
+    path: '/weaponlist',
+    component: WeaponList
+  }, {
+    name: 'equipment',
+    path: '/equipmentlist',
+    component: EquipmentList,
+  }]
 })
 
 // 把App组件，渲染，挂载到#app（会替换掉网页里的#app），是我们的根组件
