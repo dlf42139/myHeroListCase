@@ -1,7 +1,9 @@
 <template>
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <h2 class="sub-header">英雄管理</h2>
-    <a class="btn btn-success" href="add.html">Add</a>
+    <router-link :to="{name:'add'}" class="btn btn-success">添加英雄</router-link>
+    <!-- <a class="btn btn-success" href="add.html">添加英雄</a> -->
+
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -40,6 +42,7 @@ export default {
       list: []
     };
   },
+  router,
   // 组件加载完毕执行
   mounted() {
     // 发送请求获取数据

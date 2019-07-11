@@ -10,6 +10,9 @@ import HeroList from './views/heros/HeroList.vue'
 import WeaponList from './views/weapons/WeaponList.vue'
 import EquipmentList from './views/equipment/EquipmentList.vue'
 
+// 导入添加英雄的组件
+import AddHero from './views/heros/HeroList.vue'
+
 // 创建路由对象
 const router = new VueRouter({
     // 精确的配置高亮显示的类样式
@@ -31,6 +34,10 @@ const router = new VueRouter({
         name: 'equipment',
         path: '/equipmentlist',
         component: EquipmentList,
+    }, {
+        name: 'add',
+        path: '/herolist/add',
+        component: AddHero,
     }],
 })
 
