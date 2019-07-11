@@ -18,7 +18,9 @@
             <td>{{item.name}}</td>
             <td>{{item.gender}}</td>
             <td>
-              <a href="edit.html">编辑</a>
+              <router-link :to="{name:'edit' , params:{id:item.id}}">编辑</router-link>
+              <!-- <a href="edit.html">编辑</a> -->
+              <!-- <router-link :to="`/herolist/edit/`" + item.id></router-link> -->
               &nbsp;&nbsp;
               <a href="javascript:" @click="del(item.id)">删除</a>
             </td>
@@ -48,9 +50,7 @@ export default {
   methods: {
     // 初始化加载数据方法
     loadData() {
-      axios
-      .get("http://localhost:3000/heros")
-      .then(res => {
+      axios.get("http://localhost:3000/heros").then(res => {
         const { data, status } = res;
         if (status == 200) {
           this.list = data;
@@ -58,18 +58,18 @@ export default {
       });
     },
     // 删除数据方法
-    del(id){
-      if ( confirm('请问您真的要删除吗') ) {
-          axios
+    del(id) {
+      if (confirm("请问您真的要删除吗")) {
+        axios
           // .delete(`http://localhost:3000/heros/${id}`)
-          .delete('http://localhost:3000/heros/'+id)
+          .delete("http://localhost:3000/heros/" + id)
           .then(res => {
             // console.log(res);
             let status = res.status;
             if (status == 200) {
               this.loadData();
             }
-          })
+          });
       }
     }
   }
