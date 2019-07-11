@@ -20,7 +20,7 @@
             <td>
               <a href="edit.html">编辑</a>
               &nbsp;&nbsp;
-              <a href="javascript:window.confirm('Are you sure?')">删除</a>
+              <a href="javascript:" @click="del(item.id)">删除</a>
             </td>
           </tr>
         </tbody>
@@ -37,26 +37,42 @@ export default {
   data() {
     return {
       // 存储英雄列表数据
-      list:[]
+      list: []
     };
   },
   // 组件加载完毕执行
-  mounted(){
+  mounted() {
     // 发送请求获取数据
     this.loadData();
   },
   methods: {
-    loadData(){
+    // 初始化加载数据方法
+    loadData() {
       axios
-        .get('http://localhost:3000/heros')
-        .then( (res)=>{
-          const {data,status} = res;
-          if (status == 200) {
-            this.list = data;
-          }
-        } )
+      .get("http://localhost:3000/heros")
+      .then(res => {
+        const { data, status } = res;
+        if (status == 200) {
+          this.list = data;
+        }
+      });
+    },
+    // 删除数据方法
+    del(id){
+      if ( confirm('请问您真的要删除吗') ) {
+          axios
+          // .delete(`http://localhost:3000/heros/${id}`)
+          .delete('http://localhost:3000/heros/'+id)
+          .then(res => {
+            // console.log(res);
+            let status = res.status;
+            if (status == 200) {
+              this.loadData();
+            }
+          })
+      }
     }
-  },
+  }
 };
 </script>
 
