@@ -17,7 +17,9 @@ import AddHero from './views/heros/AddHero.vue'
 const router = new VueRouter({
     // 精确的配置高亮显示的类样式
     // 这个设置是针对router-link的，所以我之前的那种写法就不行了
-    linkExactActiveClass: 'active',
+    // linkExactActiveClass: 'active',
+    // 精确的可以理解为完全匹配，不exact的可以理解为路由地址中有那部分就可以。
+    linkActiveClass:'active',
     // 配置路由规则
     routes: [{
         path: '/',
