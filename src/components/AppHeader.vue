@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">CRUD</a>
+          <a class="navbar-brand" href="#">VUE基础案例</a>
         </div>
       </div>
     </nav>

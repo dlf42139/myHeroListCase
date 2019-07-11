@@ -11,7 +11,7 @@ import WeaponList from './views/weapons/WeaponList.vue'
 import EquipmentList from './views/equipment/EquipmentList.vue'
 
 // 导入添加英雄的组件
-import AddHero from './views/heros/HeroList.vue'
+import AddHero from './views/heros/AddHero.vue'
 
 // 创建路由对象
 const router = new VueRouter({
@@ -34,11 +34,11 @@ const router = new VueRouter({
         name: 'equipment',
         path: '/equipmentlist',
         component: EquipmentList,
-    }, {
-        name: 'add',
-        path: '/herolist/add',
-        component: AddHero,
-    }],
+    },{
+        name:'add',
+        path:'/herolist/add',
+        component:AddHero
+    }]
 })
 
 export default router
