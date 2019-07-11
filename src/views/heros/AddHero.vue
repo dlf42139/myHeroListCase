@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   data(){
@@ -36,7 +36,7 @@ export default {
   methods: {
     addItem(){
       // console.log(this.formData);
-      axios
+      this.axios
       .post('http://localhost:3000/heros',this.formData)
       .then( res=>{
         // console.log(res);

@@ -33,7 +33,7 @@
 
 <script>
 // 导入axios
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   data() {
@@ -50,7 +50,7 @@ export default {
   methods: {
     // 初始化加载数据方法
     loadData() {
-      axios.get("http://localhost:3000/heros").then(res => {
+      this.axios.get("http://localhost:3000/heros").then(res => {
         const { data, status } = res;
         if (status == 200) {
           this.list = data;
@@ -60,7 +60,7 @@ export default {
     // 删除数据方法
     del(id) {
       if (confirm("请问您真的要删除吗")) {
-        axios
+        this.axios
           // .delete(`http://localhost:3000/heros/${id}`)
           .delete("http://localhost:3000/heros/" + id)
           .then(res => {

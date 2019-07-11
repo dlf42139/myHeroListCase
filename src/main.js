@@ -8,6 +8,12 @@ Vue.config.productionTip = false
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './assets/css/index.css'
 
+// 这里的Vue，构造函数
+//希望给Vue的实例增加成员 （- axios，就不用每次都引用了，直接this调用），可以在Vue的
+// 原型上增加成员（原型、继承）
+import axios from 'axios'
+Vue.prototype.axios = axios;
+
 // 导入路由模块
 import router from './router.js'
 
