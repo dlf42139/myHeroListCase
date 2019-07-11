@@ -49,6 +49,11 @@ export default {
         },
         editItem(){
             axios
+            .put('http://localhost:3000/heros/' + this.id , this.formData)
+            .then(res=>{
+                console.log(res);
+                this.$router.push('/herolist')
+            })
         }
     },
 }
